@@ -13,11 +13,11 @@ const Layout = ({ children }) => {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Navbar ด้านบน */}
-      <header className="bg-blue-500 text-white p-4 flex justify-between items-center">
-        <h1 className="text-2xl font-bold">🌍 Environmental Dashboard</h1>
+      <header className="bg-blue-500 text-white p-3.5 flex justify-between items-center">
+        <h1 className="text-[clamp(1.25rem,3vw,2.5rem)] font-bold">🌍 Environmental Dashboard</h1>
         <button
           onClick={handleLogout}
-          className="bg-red-500 hover:bg-red-600 px-4 py-2 rounded-xl transition"
+          className="bg-red-500 hover:bg-red-600 text-xs sm:text-sm px-4 py-3 sm:px-4 sm:py- rounded-full font-medium transition"
         >
           Logout
         </button>
@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
       {/* ส่วนที่เหลือแบ่ง Sidebar + Content */}
       <div className="flex flex-1">
         {/* Sidebar */}
-        <aside className="w-64 bg-white shadow-lg p-6 space-y-6">
+        <aside className="hidden sm:block w-64 bg-white shadow-lg p-6 space-y-6">
           <nav className="flex flex-col space-y-4">
             <Link to="/" className="text-lg hover:text-blue-500">🏠 Dashboard</Link>
             <Link to="/temperature" className="text-lg hover:text-blue-500">🌡️ Temperature</Link>
@@ -37,7 +37,7 @@ const Layout = ({ children }) => {
         </aside>
 
         {/* Main Content */}
-        <main className="flex-1 bg-gradient-to-br from-blue-50 to-green-50 p-8">
+        <main className="flex-1 bg-gradient-to-br from-blue-50 to-green-50 p-6 sm:p-8 w-full">
           {children}
         </main>
       </div>

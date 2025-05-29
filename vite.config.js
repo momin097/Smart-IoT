@@ -6,11 +6,13 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   server: {
     host: '0.0.0.0',  // เปิดให้เข้าถึงจากเครื่องอื่น
-    port: 5173         // พอร์ตที่ใช้งาน
+    port: 5173,       // พอร์ตที่ใช้งาน
+    proxy: {
+      '/api': 'http://localhost:3000',  // ส่ง request /api ไป backend port 3000
+    }
   },
   plugins: [
     react(),
     tailwindcss(),
   ],
 })
-
